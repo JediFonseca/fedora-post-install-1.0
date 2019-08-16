@@ -11,7 +11,7 @@ sudo dnf remove rhythmbox cheese libreoffice-base gnome-maps gnome-weather gnome
 ########################################
 ###INSTALLLING NEW PACKAGES AND REPOS###
 ########################################
-sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm -y
 
 sudo dnf install nano menulibre lutris steam mscore-fonts gparted audacity-freeworld kdenlive inkscape VirtualBox devedeng soundkonverter gimp tilix git WoeUSB CPUFreqUtility wget zsh powerline-fonts neofetch paper-icon-theme pavucontrol breeze-cursor-theme gnome-tweaks chrome-gnome-shell python3-pip python3-setuptools python3-libs telegram-desktop ffmpeg ffmpegthumbnailer tumbler flatpak snapd wine wine-fonts mesa-vulkan-drivers vulkan-tools vlc zenity -y
 
@@ -47,7 +47,7 @@ mkdir /home/"$USER"/Downloads/fedorapostinstall/fonts
 cd /home/"$USER"/Downloads/fedorapostinstall/fonts
 wget https://assets.ubuntu.com/v1/0cef8205-ubuntu-font-family-0.83.zip
 unzip *.zip
-cp /home/"$USER"/Downloads/fedorapostinstall/fonts/ubuntu-font-family-0.83/*.ttf /home/"$USER"/.fonts
+cp /home/"$USER"/Downloads/fedorapostinstall/fonts/*.ttf /home/"$USER"/.fonts
 
 
 zenity --question --title="Fedora Post Install 1.0" --text="Do you wish to install Warsaw?"
