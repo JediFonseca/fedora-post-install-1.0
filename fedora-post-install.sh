@@ -44,19 +44,17 @@ cp -r /usr/share/icons/breeze_cursors /home/"$USER"/.local/share/icons
 cp -r /usr/share/icons/breeze_cursors /home/"$USER"/.icons
 
 mkdir /home/"$USER"/Downloads/fedorapostinstall/fonts
-cd /home/"$USER"/Downloads/fonts
+cd /home/"$USER"/Downloads/fedorapostinstall/fonts
 wget https://assets.ubuntu.com/v1/0cef8205-ubuntu-font-family-0.83.zip
 unzip *.zip
-cp /home/"$USER"/Downloads/fonts/ubuntu-font-family-0.83/*.ttf /home/"$USER"/.fonts
+cp /home/"$USER"/Downloads/fedorapostinstall/fonts/ubuntu-font-family-0.83/*.ttf /home/"$USER"/.fonts
 
 
-zenity --question --text=Do you wish to install Warsaw?
+zenity --question --title="Fedora Post Install 1.0" --text="Do you wish to install Warsaw?"
 if [[ $? == 0 ]] ; then
    mkdir /home/"$USER"/Downloads/fedorapostinstall/warsaw
    cd /home/"$USER"/Downloads/fedorapostinstall/warsaw
-   git clone
-   cd
-   source warsaw.sh
+   
    
 else
    echo "Skipping warsaw..."
@@ -65,6 +63,7 @@ fi
 ##########################
 ###CLEANING UP THE MESS###
 ##########################
+cd /home/"$USER"/Downloads
 sudo rm -r /home/"$USER"/Downloads/fedorapostinstall
 sudo dnf autoremove -y
 
