@@ -54,7 +54,9 @@ zenity --question --title="Fedora Post Install 1.0" --text="Do you wish to insta
 if [[ $? == 0 ]] ; then
    mkdir /home/"$USER"/Downloads/fedorapostinstall/warsaw
    cd /home/"$USER"/Downloads/fedorapostinstall/warsaw
-   
+   sudo dnf install nss-tools
+   wget https://cloud.gastecnologia.com.br/gas/diagnostico/warsaw_setup_64.rpm
+   sudo dnf localinstall warsaw_setup_64.rpm -y
    
 else
    echo "Skipping warsaw..."
