@@ -54,7 +54,7 @@ unzip *.zip
 cp /home/"$USER"/Downloads/fedorapostinstall/fonts/ubuntu-font-family-0.83/*.ttf /home/"$USER"/.fonts
 
 
-zenity --question --title="Fedora Post Install 1.0" --text="Do you wish to install Warsaw?"
+zenity --question --title="Fedora Post Install 1.0" --text="Do you wish to install Warsaw?" --width=600 --height=100
 if [[ $? == 0 ]] ; then
    mkdir /home/"$USER"/Downloads/fedorapostinstall/warsaw
    cd /home/"$USER"/Downloads/fedorapostinstall/warsaw
@@ -69,7 +69,7 @@ fi
 ##########################
 ###CLEANING UP THE MESS###
 ##########################
-zenity --question --title="Fedora Post Install 1.0" --text="Do you want to remove the work folder '/home/user/Downloads/fedrapostinstall'?"
+zenity --question --title="Fedora Post Install 1.0" --text="Do you want to remove the work folder '/home/user/Downloads/fedrapostinstall'?" --width=600 --height=100
 if [[ $? == 0 ]] ; then
    cd /home/"$USER"/Downloads
    sudo rm -r /home/"$USER"/Downloads/fedorapostinstall
