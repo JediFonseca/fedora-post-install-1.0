@@ -12,8 +12,12 @@ sudo dnf remove rhythmbox cheese libreoffice-base gnome-maps gnome-weather gnome
 ###INSTALLLING NEW PACKAGES AND REPOS###
 ########################################
 sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm -y
+sudo rpm -v --import https://download.sublimetext.com/sublimehq-rpm-pub.gpg -y
+sudo dnf config-manager --add-repo https://download.sublimetext.com/rpm/stable/x86_64/sublime-text.repo -y
+sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc -y
+sudo sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/yum.repos.d/vscode.repo' -y
 
-sudo dnf install nano menulibre lutris steam mscore-fonts gparted audacity-freeworld kdenlive inkscape VirtualBox devedeng soundkonverter gimp tilix git WoeUSB CPUFreqUtility wget zsh powerline-fonts neofetch paper-icon-theme pavucontrol breeze-cursor-theme gnome-tweaks chrome-gnome-shell python3-pip python3-setuptools python3-libs telegram-desktop ffmpeg ffmpegthumbnailer tumbler flatpak snapd wine wine-fonts mesa-vulkan-drivers vulkan-tools vlc zenity -y
+sudo dnf install code sublime-text nano menulibre lutris steam mscore-fonts gparted audacity-freeworld kdenlive inkscape VirtualBox devedeng soundkonverter gimp tilix git WoeUSB CPUFreqUtility wget zsh powerline-fonts neofetch paper-icon-theme pavucontrol breeze-cursor-theme gnome-tweaks chrome-gnome-shell python3-pip python3-setuptools python3-libs telegram-desktop ffmpeg ffmpegthumbnailer tumbler flatpak snapd wine wine-fonts mesa-vulkan-drivers vulkan-tools vlc zenity -y
 
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 sudo ln -s /var/lib/snapd/snap /snap
