@@ -6,7 +6,7 @@
 mkdir /home/"$USER"/Downloads/fedorapostinstall
 cd /home/"$USER"/Downloads/fedorapostinstall
 
-sudo dnf remove rhythmbox cheese libreoffice-base gnome-maps gnome-weather gnome-videos gnome-contacts libreoffice-calc libreoffice-draw libreoffice-impress libreoffice-writer -y
+sudo dnf remove rhythmbox cheese libreoffice-base gnome-maps gnome-weather gnome-videos gnome-contacts libreoffice-calc libreoffice-draw libreoffice-impress libreoffice-writer totem -y
 
 ########################################
 ###INSTALLLING NEW PACKAGES AND REPOS###
@@ -65,8 +65,15 @@ fi
 ##########################
 ###CLEANING UP THE MESS###
 ##########################
-cd /home/"$USER"/Downloads
-sudo rm -r /home/"$USER"/Downloads/fedorapostinstall
+zenity --question --title="Fedora Post Install 1.0" --text="Do you want to remove the work folder '/home/user/Downloads/fedrapostinstall'?"
+if [[ $? == 0 ]] ; then
+   cd /home/"$USER"/Downloads
+   sudo rm -r /home/"$USER"/Downloads/fedorapostinstall
+   
+else
+   echo "'fedorapostinstall' is untouched."
+fi
+
 sudo dnf autoremove -y
 
 zenity --info --title="Fedora Post Install 1.0 - Warning" --text="We'll now install 'Oh My Zshell'...\n\nOnce the installation is complete please DO NOT close the terminal. Type 'exit', press 'Enter', wait for the 'Installation Complete' notification and then you may close it.\n\nIn order to install 'protontricks' close and re-open the Terminal, then run 'pipx install protontricks'.\n\nAfter you see the 'Installation Complete' notification, please reboot your system."  --width=600 --height=100
