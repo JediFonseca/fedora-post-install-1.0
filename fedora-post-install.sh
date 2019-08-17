@@ -47,7 +47,7 @@ mkdir /home/"$USER"/Downloads/fedorapostinstall/fonts
 cd /home/"$USER"/Downloads/fedorapostinstall/fonts
 wget https://assets.ubuntu.com/v1/0cef8205-ubuntu-font-family-0.83.zip
 unzip *.zip
-cp /home/"$USER"/Downloads/fedorapostinstall/fonts/*.ttf /home/"$USER"/.fonts
+cp /home/"$USER"/Downloads/fedorapostinstall/fonts/ubuntu-font-family-0.83/*.ttf /home/"$USER"/.fonts
 
 
 zenity --question --title="Fedora Post Install 1.0" --text="Do you wish to install Warsaw?"
