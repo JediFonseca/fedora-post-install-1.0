@@ -71,11 +71,15 @@ fi
 ##########################
 zenity --question --title="Fedora Post Install 1.0" --text="Do you want to remove the work folder '/home/user/Downloads/fedrapostinstall'?" --width=600 --height=100
 if [[ $? == 0 ]] ; then
+   cd /usr/share/applications/
+   sudo rm wine-regedit.desktop wine-notepad.desktop wine-wineboot.desktop wine-winecfg.desktop wine-winefile.desktop wine-winhelp.desktop wine-oleview.desktop wine-uninstaller.desktop wine-wordpad.desktop
    cd /home/"$USER"/Downloads
    sudo rm -r /home/"$USER"/Downloads/fedorapostinstall
    
 else
-   echo "'fedorapostinstall' is untouched."
+   cd /usr/share/applications/
+   sudo rm wine-regedit.desktop wine-notepad.desktop wine-wineboot.desktop wine-winecfg.desktop wine-winefile.desktop wine-winhelp.desktop wine-oleview.desktop wine-uninstaller.desktop wine-wordpad.desktop
+   echo "'/home/user/Downloads/fedorapostinstall' is untouched."
 fi
 
 sudo dnf autoremove -y
