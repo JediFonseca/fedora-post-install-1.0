@@ -6,7 +6,7 @@
 mkdir /home/"$USER"/Downloads/fedorapostinstall
 cd /home/"$USER"/Downloads/fedorapostinstall
 
-sudo dnf remove rhythmbox cheese libreoffice-base gnome-maps gnome-weather gnome-videos gnome-contacts libreoffice-calc libreoffice-draw libreoffice-impress libreoffice-writer totem -y
+sudo dnf remove rhythmbox cheese libreoffice-base gnome-maps gnome-weather gnome-videos gnome-contacts libreoffice-calc libreoffice-draw libreoffice-impress libreoffice-writer libreoffice-core libreoffice-data libreoffice-graphicfilter libreoffice-gtk3 libreoffice-help-en libreoffice-langpack-en libreoffice-opensymbol-fonts libreoffice-ure libreoffice-ure-common libreoffice-x11 totem -y
 
 ########################################
 ###INSTALLLING NEW PACKAGES AND REPOS###
