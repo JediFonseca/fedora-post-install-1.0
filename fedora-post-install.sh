@@ -1,6 +1,13 @@
 #!/bin/bash
 
-zenity --info --title="Fedora Post Install 1.0 - Warning" --text="This script may take a lot of time depending on your connection.\nFrom time to time you may be asked to type your password."  --width=600 --height=100
+zenity --question --title="Fedora Post Install 1.0" --text="This script may take a lot of time depending on your connection.\nFrom time to time you may be asked to type your password and confirm some actions.\nDo you wish to continue?" --width=600 --height=100
+if [[ $? == 0 ]] ; then
+   echo "Starting the engines..."
+   
+else
+   echo "Quitting..."
+   exit
+fi
 
 #########################################################
 ###CREATING WORK FOLDER AND REMOVING UNWANTED PACKAGES###
