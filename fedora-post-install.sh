@@ -1,13 +1,13 @@
 #!/bin/bash
 
-zenity --question --title="Fedora Post Install 1.0" --text="This script may take a lot of time depending on your connection.\nFrom time to time you may be asked to type your password and confirm some actions.\nDo you wish to continue?" --width=600 --height=100
-if [[ $? == 0 ]] ; then
-   echo "Starting the engines..."
-   
-else
-   echo "Quitting..."
-   exit
-fi
+while true; do
+    read -p "This script may take a lot of time depending on your connection. From time to time you may be asked to type your password and confirm some actions. Do you wish to continue? (y/n):" yn
+    case $yn in
+        [Yy]* ) echo "Starting up the engines..."; break;;
+        [Nn]* ) echo "Quitting..."; exit;;
+        * ) echo "-Please answer with 'y' for Yes or 'n' for No and then press 'Enter'.";;
+    esac
+done
 
 #########################################################
 ###CREATING WORK FOLDER AND REMOVING UNWANTED PACKAGES###
