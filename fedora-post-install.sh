@@ -19,10 +19,13 @@ sudo dnf config-manager --add-repo https://download.sublimetext.com/rpm/stable/x
 sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc -y
 sudo sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/yum.repos.d/vscode.repo' -y
 
-sudo dnf install catfish code transmission sublime-text nano menulibre lutris steam mscore-fonts gparted audacity-freeworld kdenlive inkscape VirtualBox devedeng soundkonverter gimp tilix git WoeUSB CPUFreqUtility wget zsh powerline-fonts neofetch paper-icon-theme pavucontrol breeze-cursor-theme gnome-tweaks chrome-gnome-shell python3-pip python3-setuptools python3-libs telegram-desktop ffmpeg ffmpegthumbnailer tumbler flatpak snapd wine wine-fonts mesa-vulkan-drivers vulkan-tools vlc zenity unrar -y
+sudo dnf install ardour5 qjackctl catfish code transmission sublime-text nano menulibre lutris steam mscore-fonts gparted audacity-freeworld kdenlive inkscape VirtualBox devedeng soundkonverter gimp tilix git WoeUSB CPUFreqUtility wget zsh powerline-fonts neofetch paper-icon-theme pavucontrol breeze-cursor-theme gnome-tweaks chrome-gnome-shell python3-pip python3-setuptools python3-libs telegram-desktop ffmpeg ffmpegthumbnailer tumbler flatpak snapd wine wine-fonts mesa-vulkan-drivers vulkan-tools vlc zenity unrar -y
 
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 sudo ln -s /var/lib/snapd/snap /snap
+sudo echo -e "@realtime - rtprio 99\n@realtime - memlock unlimited" > /etc/security/limits.d/99-realtime.conf
+sudo groupadd realtime
+sudo usermod -a -G realtime "$USER"
 
 python3 -m pip install --user pipx
 ~/.local/bin/pipx ensurepath
