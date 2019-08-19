@@ -1,6 +1,6 @@
 #!/bin/bash
 
-zenity --info --title="Fedora Post Install 1.0 - Warning" --text="From time to time you may be asked to type your password. Watch it closely."  --width=600 --height=100
+zenity --info --title="Fedora Post Install 1.0 - Warning" --text="This script may take a lot of time depending on your connection.\nFrom time to time you may be asked to type your password. Watch it closely."  --width=600 --height=100
 
 #########################################################
 ###CREATING WORK FOLDER AND REMOVING UNWANTED PACKAGES###
