@@ -46,7 +46,7 @@ sudo dnf install -y balena-etcher-electron
 mkdir /home/"$USER"/Downloads/fedorapostinstall/softmakeroffice
 cd /home/"$USER"/Downloads/fedorapostinstall/softmakeroffice
 wget https://www.softmaker.net/down/softmaker-office-2018-968.x86_64.rpm
-sudo dnf localinstall /home/"$USER"/Downloads/softmakeroffice/*.rpm -y
+sudo dnf localinstall /home/"$USER"/Downloads/fedorapostinstall/softmakeroffice/*.rpm -y
 
 flatpak install flathub org.hydrogenmusic.Hydrogen -y
 flatpak install flathub com.spotify.Client -y
