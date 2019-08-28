@@ -28,6 +28,7 @@ sudo dnf install obs-studio xed dssi-calf-plugins lv2-calf-plugins ladspa-calf-p
 
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 sudo ln -s /var/lib/snapd/snap /snap
+sudo mkdir /etc/security/limits.d
 sudo su
 echo -e "@realtime - rtprio 99\n@realtime - memlock unlimited" > /etc/security/limits.d/99-realtime.conf
 exit
