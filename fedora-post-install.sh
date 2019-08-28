@@ -30,7 +30,10 @@ sudo dnf install google-noto-emoji-color-fonts dssi-calf-plugins lv2-calf-plugin
 
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 sudo ln -s /var/lib/snapd/snap /snap
-sudo echo -e "@realtime - rtprio 99\n@realtime - memlock unlimited" > /etc/security/limits.d/99-realtime.conf
+sudo mkdir /etc/security/limits.d
+sudo su
+echo -e "@realtime - rtprio 99\n@realtime - memlock unlimited" > /etc/security/limits.d/99-realtime.conf
+exit
 sudo groupadd realtime
 sudo usermod -a -G realtime "$USER"
 mkdir /home/"$USER"/.config/fontconfig
