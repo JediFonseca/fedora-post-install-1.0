@@ -24,16 +24,10 @@ sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-rele
 sudo rpm -v --import https://download.sublimetext.com/sublimehq-rpm-pub.gpg -y
 sudo dnf config-manager --add-repo https://download.sublimetext.com/rpm/stable/x86_64/sublime-text.repo -y
 
-sudo dnf install obs-studio xed dssi-calf-plugins lv2-calf-plugins ladspa-calf-plugins calf ladspa-fil-plugins lv2-swh-plugins ladspa-tap-plugins lv2-synthv1 synthv1 zynaddsubfx zynaddsubfx-common zynaddsubfx-dssi zynaddsubfx-lv2 zynaddsubfx-vst yoshimi amsynth amsynth-data dssi-amsynth-plugin lv2-amsynth-plugin vst-amsynth-plugin ardour5 qjackctl catfish transmission sublime-text lutris steam mscore-fonts gparted audacity kdenlive inkscape VirtualBox devedeng soundkonverter gimp tilix git WoeUSB CPUFreqUtility wget zsh powerline-fonts neofetch pavucontrol python3-pip python3-setuptools python3-libs telegram-desktop ffmpeg ffmpegthumbnailer tumbler flatpak snapd wine wine-fonts mesa-vulkan-drivers vulkan-tools winetricks vlc zenity unrar -y
+sudo dnf install piper obs-studio xed dssi-calf-plugins lv2-calf-plugins ladspa-calf-plugins calf ladspa-fil-plugins lv2-swh-plugins ladspa-tap-plugins lv2-synthv1 synthv1 zynaddsubfx zynaddsubfx-common zynaddsubfx-dssi zynaddsubfx-lv2 zynaddsubfx-vst yoshimi amsynth amsynth-data dssi-amsynth-plugin lv2-amsynth-plugin vst-amsynth-plugin ardour5 qjackctl catfish transmission sublime-text lutris steam mscore-fonts gparted audacity kdenlive inkscape VirtualBox devedeng soundkonverter gimp tilix git WoeUSB CPUFreqUtility wget zsh powerline-fonts neofetch pavucontrol python3-pip python3-setuptools python3-libs telegram-desktop ffmpeg ffmpegthumbnailer tumbler flatpak snapd wine wine-fonts mesa-vulkan-drivers vulkan-tools winetricks vlc zenity unrar -y
 
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 sudo ln -s /var/lib/snapd/snap /snap
-sudo mkdir /etc/security/limits.d
-sudo su
-echo -e "@realtime - rtprio 99\n@realtime - memlock unlimited" > /etc/security/limits.d/99-realtime.conf
-exit
-sudo groupadd realtime
-sudo usermod -a -G realtime "$USER"
 
 python3 -m pip install --user pipx
 ~/.local/bin/pipx ensurepath
