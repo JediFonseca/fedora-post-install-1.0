@@ -23,21 +23,13 @@ sudo dnf remove rhythmbox cheese libreoffice-base gnome-maps gnome-weather gnome
 sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm -y
 sudo rpm -v --import https://download.sublimetext.com/sublimehq-rpm-pub.gpg -y
 sudo dnf config-manager --add-repo https://download.sublimetext.com/rpm/stable/x86_64/sublime-text.repo -y
-sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc -y
-sudo sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/yum.repos.d/vscode.repo' -y
 
-sudo dnf install google-noto-emoji-color-fonts dssi-calf-plugins lv2-calf-plugins ladspa-calf-plugins calf ladspa-fil-plugins lv2-swh-plugins ladspa-tap-plugins lv2-synthv1 synthv1 zynaddsubfx zynaddsubfx-common zynaddsubfx-dssi zynaddsubfx-lv2 zynaddsubfx-vst yoshimi amsynth amsynth-data dssi-amsynth-plugin lv2-amsynth-plugin vst-amsynth-plugin ardour5 qjackctl catfish code transmission sublime-text nano menulibre lutris steam mscore-fonts gparted audacity-freeworld kdenlive inkscape VirtualBox devedeng soundkonverter gimp tilix git WoeUSB CPUFreqUtility wget zsh powerline-fonts neofetch paper-icon-theme pavucontrol breeze-cursor-theme gnome-tweaks chrome-gnome-shell python3-pip python3-setuptools python3-libs telegram-desktop ffmpeg ffmpegthumbnailer tumbler flatpak snapd wine wine-fonts mesa-vulkan-drivers vulkan-tools vlc zenity unrar -y
+sudo dnf install google-noto-emoji-color-fonts dssi-calf-plugins lv2-calf-plugins ladspa-calf-plugins calf ladspa-fil-plugins lv2-swh-plugins ladspa-tap-plugins lv2-synthv1 synthv1 zynaddsubfx zynaddsubfx-common zynaddsubfx-dssi zynaddsubfx-lv2 zynaddsubfx-vst yoshimi amsynth amsynth-data dssi-amsynth-plugin lv2-amsynth-plugin vst-amsynth-plugin ardour5 qjackctl catfish transmission sublime-text nano menulibre lutris steam mscore-fonts gparted audacity-freeworld kdenlive inkscape VirtualBox devedeng soundkonverter gimp tilix git WoeUSB CPUFreqUtility wget zsh powerline-fonts neofetch paper-icon-theme pavucontrol breeze-cursor-theme gnome-tweaks chrome-gnome-shell python3-pip python3-setuptools python3-libs telegram-desktop ffmpeg ffmpegthumbnailer tumbler flatpak snapd wine wine-fonts mesa-vulkan-drivers vulkan-tools vlc zenity unrar -y
 
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 sudo ln -s /var/lib/snapd/snap /snap
-sudo mkdir /etc/security/limits.d
-sudo su
-echo -e "@realtime - rtprio 99\n@realtime - memlock unlimited" > /etc/security/limits.d/99-realtime.conf
-exit
-sudo groupadd realtime
-sudo usermod -a -G realtime "$USER"
 mkdir /home/"$USER"/.config/fontconfig
-echo -e '<?xml version="1.0" encoding="UTF-8"?>\n<!DOCTYPE fontconfig SYSTEM "fonts.dtd">\n<fontconfig>\n  <alias>\n    <family>serif</family>\n    <prefer>\n      <family>Noto Color Emoji</family>\n    </prefer>\n  </alias>\n  <alias>\n    <family>sans-serif</family>\n    <prefer>\n      <family>Noto Color Emoji</family>\n    </prefer>\n  </alias>\n  <alias>\n    <family>monospace</family>\n    <prefer>\n      <family>Noto Color Emoji</family>\n    </prefer>\n  </alias>\n</fontconfig>' > fonts.conf
+echo -e '<?xml version="1.0" encoding="UTF-8"?>\n<!DOCTYPE fontconfig SYSTEM "fonts.dtd">\n<fontconfig>\n  <alias>\n    <family>serif</family>\n    <prefer>\n      <family>Noto Color Emoji</family>\n    </prefer>\n  </alias>\n  <alias>\n    <family>sans-serif</family>\n    <prefer>\n      <family>Noto Color Emoji</family>\n    </prefer>\n  </alias>\n  <alias>\n    <family>monospace</family>\n    <prefer>\n      <family>Noto Color Emoji</family>\n    </prefer>\n  </alias>\n</fontconfig>' > /home/"$USER"/.config/fontconfig/fonts.conf
 sudo fc-cache -f
 
 python3 -m pip install --user pipx
